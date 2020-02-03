@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background: grey;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 20px;;
+}
+
+#book-grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+svg {
+    fill: rgb(194, 194, 194);
+    align-self: center;
+    justify-self: center;
+}
+
+svg:hover {
+    fill: orangered;
+}
+
+article {
+    border: 2px solid rgb(194, 194, 194);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    height: 200px;
+    width: 150px;
+    box-shadow: 2px 2px rgb(194, 194, 194);
+}
+
+.top, .bottom {
+    width: 100%;
+    height: 25%;
+    background: orangered;
+}
+
+.form-container {
+    /* display: none; */
+    position: fixed;
+    right: 50%;
+    left: 50%;
+    top: 20%;
+    height: 40vh;
+    width: 30vh;
+    border: 2px solid orangered;
+    background: white;
+    box-shadow: 2px 2px 4px rgba(100, 100, 100, 0.5);
+    padding: 10px;
+    z-index: 1;
+}
+
+.form-container>svg {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
