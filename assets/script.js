@@ -28,22 +28,33 @@ function renderLibrary(book) {
     bookGrid.appendChild(clone);
 }
 
-addBookToLibrary('Catch-22', 'Joseph Heller', 340, 'Read');
 addBookToLibrary('To Kill a Mockingbird', 'Harper Lee', 210, 'Read');
 addBookToLibrary('Animal Farm', 'George Orwell', 180, 'Read');
 
 
-const displayForm = (() => {
-    console.log('sfd');
+const newBookForm = (() => {
     const addNewButton = document.querySelector('#add-new-book');
     const bookForm = document.querySelector('.form-container');
+    const submitButton = document.querySelector('.form-container .submit-button');
     const close = document.querySelector('.form-container .close-button');
+    const title = document.querySelector('#title');
+    const author = document.querySelector('#author');
+    const pages = document.querySelector('#pages');
+    const read = document.querySelector('#read');
     bookForm.style.display = 'none';
 
     const toggleVisibility = () => {
         bookForm.style.display = bookForm.style.display === 'none' ? '' : 'none';
     }
 
+    const submitForm = () => {
+        addBookToLibrary(title.value, author.value, pages.value, read.value)
+        toggleVisibility();
+    }
+    
     addNewButton.addEventListener('click', toggleVisibility);
     close.addEventListener('click', toggleVisibility);
+
+    submitButton.addEventListener('click', submitForm);
+    
 })();
