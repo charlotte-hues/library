@@ -1,6 +1,13 @@
-const bookCard = document.querySelector('article');
-const bookGrid = document.querySelector('#book-grid');
-const newBookButton = document.querySelector('#add-new-book');
+const domEl = (() => {
+    const bookCard = document.querySelector('article');
+    const bookGrid = document.querySelector('#book-grid');
+    const newBookButton = document.querySelector('#add-new-book');
+    const readboolean = document.querySelector('#read-indicator');
+
+    return {bookCard, bookGrid, newBookButton}
+})();
+
+
 
 let myLibrary = [];
 
@@ -21,15 +28,15 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function renderLibrary(book) {
-    let clone = bookCard.cloneNode(true);
+    let clone = domEl.bookCard.cloneNode(true);
     clone.setAttribute('data-index', myLibrary.length)
     clone.querySelector('h3').innerHTML = book.title;
     clone.querySelector('h5').innerHTML = book.author;
-    bookGrid.appendChild(clone);
+    domEl.bookGrid.appendChild(clone);
 }
 
-addBookToLibrary('To Kill a Mockingbird', 'Harper Lee', 210, 'Read');
-addBookToLibrary('Animal Farm', 'George Orwell', 180, 'Read');
+addBookToLibrary('To Kill a Mockingbird', 'Harper Lee', 210, true);
+addBookToLibrary('Animal Farm', 'George Orwell', 180, true);
 
 
 const newBookForm = (() => {

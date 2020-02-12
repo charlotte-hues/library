@@ -16,7 +16,12 @@ header {
     background: grey;
     height: 50px;
     width: 100vw;
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: large;
 }
 
 #book-grid {
@@ -38,6 +43,7 @@ svg:hover {
 }
 
 article {
+    margin: 10px;
     border: 2px solid rgb(194, 194, 194);
     display: flex;
     flex-direction: column;
@@ -92,4 +98,9 @@ form {
 .submit-button:hover {
     border: 2px solid orangered;
     color: orangered;
+}
+
+article {
+    align-self: center;
+    justify-self: center;
 }
