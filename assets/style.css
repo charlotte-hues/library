@@ -104,3 +104,15 @@ article {
     align-self: center;
     justify-self: center;
 }
+
+.not-read:hover {
+    fill: rgb(194, 194, 194);
+}
+
+.read {
+    fill: orangered;
+}
+
+.read:hover {
+    fill: orangered;
+}
